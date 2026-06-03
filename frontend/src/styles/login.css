@@ -1,0 +1,76 @@
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: radial-gradient(circle at center, hsla(180, 100%, 50%, 0.05), transparent);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 450px;
+  padding: 3rem;
+  text-align: center;
+}
+
+.auth-card h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.auth-card h2 span {
+  color: hsl(var(--accent-cyan));
+}
+
+.auth-card p {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.auth-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.auth-footer {
+  margin-top: 2rem !important;
+  font-size: 0.9rem;
+}
+
+.auth-footer a {
+  color: hsl(var(--accent-cyan));
+  font-weight: 600;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+.password-field-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  color: hsla(180, 100%, 50%, 0.4);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+.password-toggle:hover {
+  color: hsl(var(--accent-cyan));
+  background: hsla(180, 100%, 50%, 0.1);
+  box-shadow: 0 0 10px hsla(180, 100%, 50%, 0.2);
+}

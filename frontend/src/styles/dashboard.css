@@ -1,0 +1,123 @@
+.dashboard-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.stat-card {
+  padding: 1.5rem;
+}
+
+.stat-label {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.stat-value-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.stat-value-row h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.stat-change {
+  color: #00ff88;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  background: hsla(150, 100%, 50%, 0.1);
+  border-radius: 4px;
+}
+
+.dashboard-sections {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.quick-actions, .recent-activity {
+  padding: 2rem;
+}
+
+.quick-actions h3, .recent-activity h3 {
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+}
+
+.quick-actions h3 span, .recent-activity h3 span {
+  color: hsl(var(--accent-cyan));
+}
+
+.actions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.action-btn {
+  padding: 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  border: 1px solid hsla(180, 100%, 50%, 0.1);
+}
+
+.action-btn:hover {
+  background: hsla(180, 100%, 50%, 0.15);
+  border-color: hsl(var(--accent-cyan));
+}
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.activity-item {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.activity-icon {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #00ff88;
+  box-shadow: 0 0 10px #00ff88;
+}
+
+.activity-icon.blue {
+  background: hsl(var(--accent-cyan));
+  box-shadow: 0 0 10px hsl(var(--accent-cyan));
+}
+
+.activity-info p {
+  font-size: 0.95rem;
+}
+
+.activity-info span {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 1024px) {
+  .dashboard-sections {
+    grid-template-columns: 1fr;
+  }
+}

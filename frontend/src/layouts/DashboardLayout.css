@@ -1,0 +1,138 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  padding: 1.5rem;
+  gap: 1.5rem;
+  background: radial-gradient(circle at top right, hsla(180, 100%, 50%, 0.05), transparent);
+}
+
+.sidebar {
+  flex-shrink: 0;
+  width: 140px;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  height: calc(100vh - 3rem);
+  position: sticky;
+  top: 1.5rem;
+}
+
+.sidebar-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.sidebar-header h2 {
+  color: hsl(var(--accent-cyan));
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.role-badge {
+  background: hsla(180, 100%, 50%, 0.1);
+  color: hsl(var(--accent-cyan));
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid hsla(180, 100%, 50%, 0.2);
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.nav-item {
+  padding: 0.7rem 0.8rem;
+  border-radius: 8px;
+  color: var(--text-secondary);
+  transition: var(--transition-fast);
+  font-weight: 500;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: normal;
+}
+
+.nav-item:hover, .nav-item.active {
+  background: hsla(180, 100%, 50%, 0.1);
+  color: white;
+  box-shadow: 0 0 10px hsla(180, 100%, 50%, 0.1);
+}
+
+.nav-item.active {
+  border-left: 3px solid hsl(var(--accent-cyan));
+}
+
+.logout-btn {
+  margin-top: auto;
+  background: hsla(0, 100%, 50%, 0.1);
+  color: #ff4444;
+  border: 1px solid hsla(0, 100%, 50%, 0.2);
+  padding: 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.logout-btn:hover {
+  background: #ff4444;
+  color: white;
+}
+
+.main-content {
+  flex: 1;
+  min-width: 0; /* CRITICAL: prevents flex child from overflowing */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  overflow: hidden;
+}
+
+.topbar {
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.topbar .user-info {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.content-area {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+  }
+  .main-content {
+    min-width: 0;
+  }
+}

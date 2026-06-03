@@ -1,0 +1,58 @@
+const mongoose = require('mongoose');
+
+const caseSchema = new mongoose.Schema({
+  caseNo: {
+    type: String,
+    required: [true, 'Please add a case number'],
+    unique: true,
+  },
+  firNo: {
+    type: String,
+    required: [true, 'Please add an FIR number'],
+    unique: true,
+  },
+  us: String,
+  rcNo: String,
+  date: String,
+  time: String,
+  personName: String,
+  laName: String,
+  laFunctionalDetails: String,
+  isLACompleted: { type: Boolean, default: false },
+  pendingReason: String,
+  status: {
+    type: String,
+    enum: ['Registered', 'Allotted', 'Team-Assigned'],
+    default: 'Registered',
+  },
+  allottedTo: String,
+  allottedBy: String,
+  allottedDate: String,
+  allottedTime: String,
+  previousAllottedTo: String,
+  previousAllottedBy: String,
+  previousAllottedDate: String,
+  previousAllottedTime: String,
+  teamMemberName: String,
+  teamMemberPosition: String,
+  teamAssignmentDate: String,
+  teamAssignmentTime: String,
+  caseOpenDate: String,
+  caseOpenTime: String,
+  noOfParcels: Number,
+  noOfExhibits: Number,
+  conditionOfExhibit: String,
+  whoHelped: String,
+  evidenceStatus: {
+    type: String,
+    enum: ['Registered', 'Under Examination', 'Reported', 'Collected', ''],
+    default: 'Registered',
+  },
+  evidencePhase: String,
+  startedDate: String,
+  finishDate: String,
+  reportedDate: String,
+  collectedDate: String,
+}, { timestamps: true });
+
+module.exports = mongoose.model('Case', caseSchema);

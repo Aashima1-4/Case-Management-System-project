@@ -1,0 +1,110 @@
+:root {
+  /* Cyber Dark Theme - HSL */
+  --bg-color: 220 30% 5%;
+  --card-bg: 220 30% 10%;
+  --accent-cyan: 180 100% 50%;
+  --accent-teal: 170 100% 45%;
+  --text-primary: 0 0% 100%;
+  --text-secondary: 220 10% 70%;
+  --glass-bg: hsla(220, 30%, 10%, 0.7);
+  --glass-border: hsla(180, 100%, 50%, 0.2);
+  --shadow-glow: 0 0 20px hsla(180, 100%, 50%, 0.3);
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  --primary-light: hsl(180, 100%, 75%);
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px hsla(180, 100%, 50%, 0.2);
+  }
+
+  50% {
+    box-shadow: 0 0 20px hsla(180, 100%, 50%, 0.5);
+  }
+
+  100% {
+    box-shadow: 0 0 5px hsla(180, 100%, 50%, 0.2);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: var(--transition-fast);
+}
+
+.glass-card:hover {
+  border-color: hsla(180, 100%, 50%, 0.5);
+  transform: translateY(-5px);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, hsl(var(--accent-cyan)), hsl(var(--accent-teal)));
+  color: hsl(var(--bg-color));
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.2);
+  box-shadow: var(--shadow-glow);
+}
+
+.input-field {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  width: 100%;
+  transition: var(--transition-fast);
+  color-scheme: dark;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: hsl(var(--accent-cyan));
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.input-field option {
+  background-color: hsl(220, 30%, 10%);
+  color: white;
+}
